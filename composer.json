@@ -1,5 +1,5 @@
 {
-    "name": "anax/mvc/cdatabasemodel",    
+    "name": "chp/cdatabasemodel",    
     "type": "library",
     "description": "Database content to Anax-MVC",
     "keywords": ["databasemodel", "database", "anax-mvc", "education"],

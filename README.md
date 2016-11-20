@@ -38,7 +38,7 @@ Install instructions
 You can also use this by composer, write this in your composer: 
 
 ```javascript
-    "anax/mvc": "dev-master"
+    "chp/cdatabasemodel": "dev-master"
 ```
 
 
