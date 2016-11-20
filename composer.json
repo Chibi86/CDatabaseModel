@@ -1,0 +1,22 @@
+{
+    "name": "anax/mvc/cdatabasemodel",    
+    "type": "library",
+    "description": "Database content to Anax-MVC",
+    "keywords": ["databasemodel", "database", "anax-mvc", "education"],
+    "homepage": "http://chibidesign.se",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rasmus Berg",
+            "email": "rasmus.berg@chibidesign.se",
+            "homepage": "http://chibidesign.se",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": { "anax\\": "src/" }
+    }
+}
