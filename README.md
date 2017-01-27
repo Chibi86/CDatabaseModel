@@ -2,7 +2,7 @@ CDatabaseModel for ANAX-MVC
 ===========================
 
 A model for database-methods, made with guidelines by https://dbwebb.se/kunskap/skapa-basklasser-for-databasdrivna-modeller-i-anax-mvc.
-Byt got some small moding like limit and offset can set by class-call ($this->db->limit(1) etc).
+But got some small moding like limit and offset can set by class-call ($this->db->limit(1) etc).
 
 By Rasmus Berg, rasmus.berg@chibidesign.se
 
@@ -16,7 +16,6 @@ This software is free software and carries a MIT license.
 Use of external libraries
 -----------------------------------
 
-The following external modules are excluded byt will be needed for run this classes.
 
 ### Anax-MVC (Get this one first)
 * Github: https://github.com/mosbth/Anax-MVC
