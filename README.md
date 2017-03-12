@@ -16,6 +16,7 @@ This software is free software and carries a MIT license.
 Use of external libraries
 -----------------------------------
 
+The following external modules are excluded but will be needed for run this classes.
 
 ### Anax-MVC (Get this one first)
 * Github: https://github.com/mosbth/Anax-MVC
@@ -44,7 +45,11 @@ You can also use this by composer, write this in your composer:
 History
 -----------------------------------
 
-###History for Database TextContent for ANAX-MVC 
+###History for CDatabaseModel for ANAX-MVC 
+
+v1.0.1 (2017-03-09)
+* Update: Remove short php-tag
+* Bugfix: Fix wrong namespace
 
 v1.0.0 (2016-11-20)
 
