@@ -1,4 +1,4 @@
-<?
+<?php
 namespace Anax\MVC;
 
 /**
@@ -229,4 +229,3 @@ class CDatabaseModel implements \Anax\DI\IInjectionAware
     return $this->db->fetchAll();
   }
 }
-?>
