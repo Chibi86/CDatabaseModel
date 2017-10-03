@@ -59,7 +59,7 @@ History
 
 v2.0 (2017-10-03)
 * Added: Paging support to Find all method (ex. `$this->users->findAll($page, $perPage)`)
-* Added: Count all method `$this->users->countAll()`
+* Added: Count all method (ex. `$this->users->countAll()`)
 * Bugfix: User object was send with properties
 * Bugfix: Update method never save id, when object was send for be edit
 
