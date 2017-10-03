@@ -2,7 +2,13 @@ CDatabaseModel for ANAX-MVC
 ===========================
 
 A model for database-methods, made with guidelines by https://dbwebb.se/kunskap/skapa-basklasser-for-databasdrivna-modeller-i-anax-mvc.
-But got some small moding like limit and offset can set by class-call ($this->db->limit(1) etc).
+
+Modded methods:
+
+Limit: "$this->db->limit(1)"
+Offset: "$this->db->offset(1)"
+Count all: "$this->users->countAll()"
+Find all with paging support: "$this->users->findAll($page, $perPage)"
 
 By Rasmus Berg, rasmus.berg@chibidesign.se
 
@@ -33,7 +39,7 @@ Install instructions
 
 ### 1. First you will need to install the other modules (if not got theim already). 
 
-### 2. The easiest way to install this is using add `src` to `src\` in your Anax-MVC installation.
+### 2. The easiest way to install this is using composer:
 
 You can also use this by composer, write this in your composer: 
 
@@ -47,6 +53,12 @@ History
 
 ###History for CDatabaseModel for ANAX-MVC 
 
+v2 (2017-10-03)
+* Added: Paging support to Find all method (ex. "$this->users->findAll($page, $perPage)")
+* Added: Count all method "$this->users->countAll()"
+* Bugfix: User object was send with properties
+* Bugfix: Update method never save id, when object was send for be edit
+
 v1.0.1 (2017-03-09)
 * Update: Remove short php-tag
 * Bugfix: Fix wrong namespace
@@ -58,5 +70,5 @@ v1.0.0 (2016-11-20)
 
 
 ```
-Copyright (c) 2016 Rasmus Berg, rasmus.berg@chibidesign.se
+Copyright (c) 2016-2017 Rasmus Berg, rasmus.berg@chibidesign.se
 ```

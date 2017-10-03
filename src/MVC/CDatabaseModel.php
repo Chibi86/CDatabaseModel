@@ -1,5 +1,5 @@
 <?php
-namespace Anax\MVC;
+namespace Chp\MVC;
 
 /**
  * Model for database-methods.
@@ -28,7 +28,8 @@ class CDatabaseModel implements \Anax\DI\IInjectionAware
       $properties = get_object_vars($this);
       unset($properties['di']);
       unset($properties['db']);
-
+      unset($properties['user']);
+      
       return $properties;
   }
   
@@ -50,12 +51,23 @@ class CDatabaseModel implements \Anax\DI\IInjectionAware
   /**
    * Find and return all
    *
-   * @Return    Array
+   * @param  	  int	      $page				Wich page paging are at
+	 * @param  	  int	      $perPage		Threads per page
+   * @return    object                Object of database rows
    */
-  public function findAll()
+  public function findAll($page = 1, $perPage = 0)
   {
     $this->db->select()
              ->from($this->getSource());
+    
+    if(is_numeric($perPage) && $perPage > 0){
+      $this->db->limit($perPage);
+      
+      if(is_numeric($page) && $page > 1){
+        $offset = $this->paging->getOffset($page, $perPage);
+        $this->db->offset($offset);
+      }
+    }
     
     $this->db->execute();
     $this->db->setFetchModeClass(__CLASS__);
@@ -63,10 +75,25 @@ class CDatabaseModel implements \Anax\DI\IInjectionAware
   }
   
   /**
+   * Count all rows in database table
+   * 
+   * @return  int   $row->countRows   Count of rows
+   */
+  public function countAll(){
+	  $this->db->select('COUNT(id) as countRows')
+	           ->from($this->getSource());
+             
+    $this->db->execute();
+    $this->db->setFetchModeClass(__CLASS__);
+    $row = $this->db->fetchOne();
+    return $row->countRows;
+  }
+  
+  /**
    * Find and return specific row
    *
    * @Param   Int   $id   Row index
-   * @Return  this
+   * @return  this
    */
   public function find($id = 0){
     $this->db->select()
@@ -87,12 +114,10 @@ class CDatabaseModel implements \Anax\DI\IInjectionAware
     $this->setProperties($values);
     $values = $this->getProperties();
     
-    if(isset($values['id'])){
+    if(isset($values['id']))
       return $this->update($values);
-    }
-    else{
+    else
       return $this->create($values);
-    }
   }
   
   /**
@@ -124,11 +149,15 @@ class CDatabaseModel implements \Anax\DI\IInjectionAware
    * @Return  Boolean   True/false  If saving went okey
    */
   public function update($values = []){
+    if(key_exists('id', $values)){
+      $this->id = $values['id'];
+      unset($values['id']);
+    }
+      
     $keys   = array_keys($values);
     $values = array_values($values);
     
     // Its update, remove id and use where-clause
-    unset($keys['id']);
     $values[] = $this->id;
     
     $this->db->update(
@@ -229,3 +258,4 @@ class CDatabaseModel implements \Anax\DI\IInjectionAware
     return $this->db->fetchAll();
   }
 }
+?>
