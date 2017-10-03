@@ -3,7 +3,7 @@ CDatabaseModel for ANAX-MVC
 
 A model for database-methods, made with guidelines by https://dbwebb.se/kunskap/skapa-basklasser-for-databasdrivna-modeller-i-anax-mvc (Swedish).
 
-### Extra examples: 
+### Added extra: 
 
 Limit: `$this->[your-class]->limit(1)`
 
@@ -13,8 +13,9 @@ Count all: `$this->[your-class]->countAll()`
 
 Find all with paging support: `$this->[your-class]->findAll($page, $perPage)`
 
+--------------------
 
-By Rasmus Berg, rasmus.berg@chibidesign.se
+Made by Rasmus Berg, rasmus.berg@chibidesign.se
 
 
 License
