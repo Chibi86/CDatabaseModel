@@ -3,15 +3,15 @@ CDatabaseModel for ANAX-MVC
 
 A model for database-methods, made with guidelines by https://dbwebb.se/kunskap/skapa-basklasser-for-databasdrivna-modeller-i-anax-mvc (Swedish).
 
-## Extra:
+### Extra examples: 
 
-Limit: `$this->db->limit(1)`
+Limit: `$this->[your-class]->limit(1)`
 
-Offset: `$this->db->offset(1)`
+Offset: `$this->[your-class]->offset(1)`
 
-Count all: `$this->users->countAll()`
+Count all: `$this->[your-class]->countAll()`
 
-Find all with paging support: `$this->users->findAll($page, $perPage)`
+Find all with paging support: `$this->[your-class]->findAll($page, $perPage)`
 
 
 By Rasmus Berg, rasmus.berg@chibidesign.se
@@ -58,8 +58,8 @@ History
 ###History for CDatabaseModel for ANAX-MVC 
 
 v2.0 (2017-10-03)
-* Added: Paging support to Find all method (ex. "$this->users->findAll($page, $perPage)")
-* Added: Count all method "$this->users->countAll()"
+* Added: Paging support to Find all method (ex. `$this->users->findAll($page, $perPage)`)
+* Added: Count all method `$this->users->countAll()`
 * Bugfix: User object was send with properties
 * Bugfix: Update method never save id, when object was send for be edit
 
