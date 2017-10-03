@@ -45,7 +45,7 @@ Install instructions
 
 ### 2. The easiest way to install this is using composer:
 
-You can also use this by composer, write this in your composer: 
+Write this in your composer: 
 
 ```javascript
     "chp/cdatabasemodel": "dev-master"
